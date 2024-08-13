@@ -2,13 +2,14 @@ import java.util.Scanner;
 
 public class Calculator {
   
+  // Building a method to validate and convert the string into int 
   
   public static int validateAndConvertToInt(String input) {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            return Integer.MIN_VALUE; // Return a sentinel value if the input is not a valid integer
-        }
+            return Integer.MIN_VALUE;
+        } 
     }
     
   public static void main(String[] args) {
