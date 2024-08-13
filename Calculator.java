@@ -2,13 +2,12 @@ import java.util.Scanner;
 
 public class Calculator {
   
- // Building a method to convert the string into int 
-   
+  
   public static int validateAndConvertToInt(String input) {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            return Integer.MIN_VALUE; 
+            return Integer.MIN_VALUE; // Return a sentinel value if the input is not a valid integer
         }
     }
     
@@ -20,7 +19,7 @@ public class Calculator {
     
    //printing and handling the error 
    
-    System.out.println("Enter one number to perform these(+,-,*,/)" );
+    System.out.println("Enter one number to perform these(+,-,*,/) : ");
     String input1 = scanner.nextLine();
     
     int number1 = validateAndConvertToInt(input1);
@@ -30,11 +29,17 @@ public class Calculator {
     }
     
     
-    System.out.println("Enter these operator(+,-,*,/) to perform the operation" );
-    char operator = scanner.next().charAt(0);
+    System.out.println("Enter these operator(+,-,*,/) to perform the operation :" );
+    String operatorInput = scanner.nextLine();
+        
+        if (operatorInput.isEmpty()) {
+            System.out.println("Invalid operator! Please enter a valid operator");
+            return;
+        }
+        char operator = operatorInput.charAt(0);
     
     
-    System.out.println("Enter another number to perform these(+,-,*,/)" );
+    System.out.println("Enter another number to perform these(+,-,*,/) :" );
     String input2 = scanner.nextLine();
     
     int number2 = validateAndConvertToInt(input2);
@@ -53,25 +58,25 @@ public class Calculator {
     if(operator == '+'){
       
       finalResult = number1 + number2 ;
-      System.out.println(finalResult);
+      System.out.println("Final result : " +finalResult);
     }
     
     else if(operator == '-'){
       
       finalResult = number1 - number2 ;
-      System.out.println(finalResult);
+      System.out.println("Final result : "+finalResult);
     }
     
     else if(operator == '*'){
       
       finalResult = number1 * number2 ;
-      System.out.println(finalResult);
+      System.out.println("Final result : "+finalResult);
     }
     
     else if(operator == '/'){
       
       finalResult = number1 / number2 ;
-      System.out.println(finalResult);
+      System.out.println("Final result : "+finalResult);
     }
     
     
@@ -81,7 +86,7 @@ public class Calculator {
     
     }
     
-     
+     scanner.close();
   }
   
   
