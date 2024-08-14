@@ -18,7 +18,7 @@ public class Calculator {
     
     Scanner scanner = new Scanner(System.in);
     
-   //printing and handling the error 
+   // printing and handling the error 
    
     System.out.println("Enter one number to perform these(+,-,*,/) : ");
     String input1 = scanner.nextLine();
